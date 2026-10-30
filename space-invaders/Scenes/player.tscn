@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://darjgb3fu5rx"]
+
+[ext_resource type="Script" uid="uid://c1njhrweno3a3" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://bgag0bs3da867" path="res://Sprites/spritesheet.png" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://coy46w267m7lj" path="res://Scenes/bullet.tscn" id="2_vgqql"]
+[ext_resource type="Shape2D" uid="uid://ciimvq32hf6kn" path="res://Shapes/player_hitbox.tres" id="4_vgqql"]
+
+[node name="Player" type="Node2D" unique_id=411125828]
+scale = Vector2(3, 3)
+script = ExtResource("1_cvnsp")
+bullet_scene = ExtResource("2_vgqql")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=364351892]
+texture = ExtResource("2_6t5aa")
+region_enabled = true
+region_rect = Rect2(2, 48, 15, 10)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=167393843]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1342705115]
+shape = ExtResource("4_vgqql")

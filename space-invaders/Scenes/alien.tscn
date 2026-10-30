@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c711wswn6xq1j"]
+
+[ext_resource type="Texture2D" uid="uid://bgag0bs3da867" path="res://Sprites/spritesheet.png" id="1_0cgv7"]
+[ext_resource type="Script" uid="uid://b71t81kn5wj58" path="res://Scripts/alien.gd" id="1_26noy"]
+[ext_resource type="Shape2D" uid="uid://c6ma1oluyoc4e" path="res://Shapes/alien_hitbox.tres" id="2_uphwn"]
+
+[node name="Alien" type="Node2D" unique_id=790257735]
+scale = Vector2(3, 3)
+script = ExtResource("1_26noy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=526128683]
+texture = ExtResource("1_0cgv7")
+region_enabled = true
+region_rect = Rect2(39, 1, 12, 8)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2050905484]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1032924435]
+shape = ExtResource("2_uphwn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://coy46w267m7lj"]
+
+[ext_resource type="Script" uid="uid://b8nw31v8sy7hf" path="res://Scripts/bullet.gd" id="1_oduel"]
+[ext_resource type="Texture2D" uid="uid://bgag0bs3da867" path="res://Sprites/spritesheet.png" id="2_oduel"]
+[ext_resource type="Shape2D" uid="uid://dpor8vdm31c20" path="res://Shapes/bullet_hitbox.tres" id="3_ycag2"]
+
+[node name="Bullet" type="Node2D" unique_id=404103264]
+scale = Vector2(3, 3)
+script = ExtResource("1_oduel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=83700403]
+texture = ExtResource("2_oduel")
+region_enabled = true
+region_rect = Rect2(42, 21, 1, 7)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1431746464]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1692639651]
+shape = ExtResource("3_ycag2")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

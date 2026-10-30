@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://07if7ldg1fuh"]
+
+[ext_resource type="PackedScene" uid="uid://darjgb3fu5rx" path="res://Scenes/player.tscn" id="1_iu3qw"]
+[ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/alien.tscn" id="2_7oj32"]
+
+[node name="PlayGround" type="Node2D" unique_id=1242142124]
+
+[node name="Player" parent="." unique_id=411125828 instance=ExtResource("1_iu3qw")]
+position = Vector2(566, 589)
+
+[node name="Alien" parent="." unique_id=790257735 instance=ExtResource("2_7oj32")]
+position = Vector2(564, 372)
+
+[node name="Alien2" parent="." unique_id=869720224 instance=ExtResource("2_7oj32")]
+position = Vector2(495, 372)
+
+[node name="Alien3" parent="." unique_id=2062206859 instance=ExtResource("2_7oj32")]
+position = Vector2(628, 372)
+
+[node name="Alien4" parent="." unique_id=475339564 instance=ExtResource("2_7oj32")]
+position = Vector2(697, 368)

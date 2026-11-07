@@ -6,12 +6,12 @@
 script = ExtResource("1_6inah")
 
 [node name="LeftVisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1208969760]
-position = Vector2(-11.666667, -2.6666667)
-rect = Rect2(0, 0, 5, 5)
+position = Vector2(-10, 0)
+rect = Rect2(0, 0, 1, 1)
 
 [node name="RightVisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=583978534]
-position = Vector2(6.666666, -2.666667)
-rect = Rect2(0, 0, 5, 5)
+position = Vector2(10, 0)
+rect = Rect2(0, 0, 1, 1)
 
 [connection signal="screen_entered" from="LeftVisibleOnScreenNotifier2D" to="." method="_on_left_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="LeftVisibleOnScreenNotifier2D" to="." method="_on_left_visible_on_screen_notifier_2d_screen_exited"]

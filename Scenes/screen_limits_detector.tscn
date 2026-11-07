@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://braqoh2wtc535"]
+
+[ext_resource type="Script" uid="uid://otlxmrtix62f" path="res://Scripts/is_on_screen_limits_detector.gd" id="1_6inah"]
+
+[node name="ScreenLimitsDetector" type="Node2D" unique_id=1321786082]
+script = ExtResource("1_6inah")
+
+[node name="LeftVisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1208969760]
+position = Vector2(-11.666667, -2.6666667)
+rect = Rect2(0, 0, 5, 5)
+
+[node name="RightVisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=583978534]
+position = Vector2(6.666666, -2.666667)
+rect = Rect2(0, 0, 5, 5)
+
+[connection signal="screen_entered" from="LeftVisibleOnScreenNotifier2D" to="." method="_on_left_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="LeftVisibleOnScreenNotifier2D" to="." method="_on_left_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_entered" from="RightVisibleOnScreenNotifier2D" to="." method="_on_right_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="RightVisibleOnScreenNotifier2D" to="." method="_on_right_visible_on_screen_notifier_2d_screen_exited"]

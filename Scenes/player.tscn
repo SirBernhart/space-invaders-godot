@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bgag0bs3da867" path="res://Sprites/spritesheet.png" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://coy46w267m7lj" path="res://Scenes/bullet.tscn" id="2_vgqql"]
 [ext_resource type="Shape2D" uid="uid://ciimvq32hf6kn" path="res://Shapes/player_hitbox.tres" id="4_vgqql"]
+[ext_resource type="PackedScene" uid="uid://braqoh2wtc535" path="res://Scenes/screen_limits_detector.tscn" id="5_fkybt"]
 
-[node name="Player" type="Node2D" unique_id=411125828]
+[node name="Player" type="Node2D" unique_id=411125828 node_paths=PackedStringArray("screen_limit_detector")]
 scale = Vector2(3, 3)
 script = ExtResource("1_cvnsp")
 bullet_scene = ExtResource("2_vgqql")
+screen_limit_detector = NodePath("ScreenLimitsDetector")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=364351892]
 texture = ExtResource("2_6t5aa")
@@ -19,3 +21,5 @@ region_rect = Rect2(2, 48, 15, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1342705115]
 shape = ExtResource("4_vgqql")
+
+[node name="ScreenLimitsDetector" parent="." unique_id=1321786082 instance=ExtResource("5_fkybt")]

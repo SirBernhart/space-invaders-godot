@@ -9,15 +9,19 @@
 [node name="Player" parent="." unique_id=411125828 instance=ExtResource("1_iu3qw")]
 position = Vector2(566, 589)
 
-[node name="AlienMover" type="Node2D" parent="." unique_id=1722449847 node_paths=PackedStringArray("aliens_parent")]
+[node name="AlienMover" type="Node2D" parent="." unique_id=1722449847 node_paths=PackedStringArray("aliens_parent", "move_timer")]
 position = Vector2(376, 0)
 script = ExtResource("2_ennsb")
-alien_move_interval = 1.0
+starting_alien_move_interval = 1.0
+alien_move_interval_decrement = 0.2
+min_alien_move_interval = 0.2
 alien_move_distance = 50
+alien_vertical_move_distance = 25
 aliens_parent = NodePath("AliensParent")
+move_timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="AlienMover" unique_id=1814113385]
-autostart = true
+wait_time = 1.5
 
 [node name="AliensParent" type="Node2D" parent="AlienMover" unique_id=1080386705]
 

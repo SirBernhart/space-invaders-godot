@@ -3,10 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bgag0bs3da867" path="res://Sprites/spritesheet.png" id="1_0cgv7"]
 [ext_resource type="Script" uid="uid://b71t81kn5wj58" path="res://Scripts/alien.gd" id="1_26noy"]
 [ext_resource type="Shape2D" uid="uid://c6ma1oluyoc4e" path="res://Shapes/alien_hitbox.tres" id="2_uphwn"]
+[ext_resource type="PackedScene" uid="uid://braqoh2wtc535" path="res://Scenes/screen_limits_detector.tscn" id="4_7sw17"]
 
-[node name="Alien" type="Node2D" unique_id=790257735]
+[node name="Alien" type="Node2D" unique_id=790257735 node_paths=PackedStringArray("screen_limits_detector")]
 scale = Vector2(3, 3)
 script = ExtResource("1_26noy")
+screen_limits_detector = NodePath("IsOnScreenLimitsDetector")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=526128683]
 texture = ExtResource("1_0cgv7")
@@ -19,5 +21,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1032924435]
 shape = ExtResource("2_uphwn")
+
+[node name="IsOnScreenLimitsDetector" parent="." unique_id=1321786082 instance=ExtResource("4_7sw17")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

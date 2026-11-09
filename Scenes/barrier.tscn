@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bgd2tecc4u6ck"]
+
+[ext_resource type="Script" uid="uid://dgnr4njxdvwxu" path="res://Scripts/barrier.gd" id="1_wexun"]
+[ext_resource type="Texture2D" uid="uid://bgag0bs3da867" path="res://Sprites/spritesheet.png" id="2_1olmg"]
+[ext_resource type="Shape2D" uid="uid://dwq5khhk2b7f5" path="res://Shapes/barrier_slice.tres" id="3_megwv"]
+
+[node name="Barrier" type="Node2D" unique_id=312604040]
+scale = Vector2(3.5, 3.5)
+script = ExtResource("1_wexun")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1553259139]
+texture = ExtResource("2_1olmg")
+region_enabled = true
+region_rect = Rect2(52, 31, 9, 6)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=711333992]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1602325190]
+shape = ExtResource("3_megwv")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://darjgb3fu5rx" path="res://Scenes/player.tscn" id="1_iu3qw"]
 [ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/alien.tscn" id="2_7oj32"]
 [ext_resource type="Script" uid="uid://cdo0gnvla68xv" path="res://Scripts/alien_mover.gd" id="2_ennsb"]
+[ext_resource type="PackedScene" uid="uid://bgd2tecc4u6ck" path="res://Scenes/barrier.tscn" id="4_qtdxr"]
 
 [node name="PlayGround" type="Node2D" unique_id=1242142124]
 
@@ -36,5 +37,9 @@ position = Vector2(574, 368)
 
 [node name="Alien4" parent="AlienMover/AliensParent" unique_id=1171722263 instance=ExtResource("2_7oj32")]
 position = Vector2(510, 368)
+
+[node name="Barrier" parent="." unique_id=312604040 instance=ExtResource("4_qtdxr")]
+position = Vector2(564, 477)
+max_health = 5
 
 [connection signal="timeout" from="AlienMover/Timer" to="AlienMover" method="_on_timer_timeout"]

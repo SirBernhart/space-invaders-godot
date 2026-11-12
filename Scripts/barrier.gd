@@ -3,11 +3,15 @@ extends Node
 @export var max_health : int
 @export var sprite : Sprite2D
 
+@onready var area_2d: Area2D = $Area2D
+
 var current_health : int
+
 
 func _ready() -> void:
 	current_health = max_health
 	update_shader_value()
+	area_2d.area_entered.connect(_on_area_2d_area_entered)
 
 
 func reduce_health() -> void:

@@ -1,5 +1,8 @@
 extends Node2D
 
+# TODO: Chamar de Aliens e colocar sempre timer com um nome
+# próprio para facilitar a legibilidade
+
 @export var starting_alien_move_interval : float
 @export var alien_move_interval_decrement : float
 @export var min_alien_move_interval : float
@@ -18,6 +21,7 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	for alien_instance in all_aliens:
+		# TODO:Deixar só o da direta
 		if alien_instance == null or !is_instance_valid(alien_instance):
 			continue
 		
@@ -27,5 +31,5 @@ func _on_timer_timeout() -> void:
 			move_timer.start(max(move_timer.wait_time - alien_move_interval_decrement, min_alien_move_interval))
 			position.y += alien_vertical_move_distance
 			return
-
+	
 	position += current_move_direction * alien_move_distance

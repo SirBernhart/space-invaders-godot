@@ -10,7 +10,7 @@
 [node name="Player" parent="." unique_id=411125828 instance=ExtResource("1_iu3qw")]
 position = Vector2(566, 589)
 
-[node name="AlienMover" type="Node2D" parent="." unique_id=1722449847 node_paths=PackedStringArray("aliens_parent", "move_timer")]
+[node name="Aliens" type="Node2D" parent="." unique_id=1722449847 node_paths=PackedStringArray("aliens_parent", "move_timer")]
 position = Vector2(376, 0)
 script = ExtResource("2_ennsb")
 starting_alien_move_interval = 1.0
@@ -21,24 +21,24 @@ alien_vertical_move_distance = 25
 aliens_parent = NodePath("AliensParent")
 move_timer = NodePath("Timer")
 
-[node name="Timer" type="Timer" parent="AlienMover" unique_id=1814113385]
+[node name="Timer" type="Timer" parent="Aliens" unique_id=1814113385]
 wait_time = 1.5
 
-[node name="AliensParent" type="Node2D" parent="AlienMover" unique_id=1080386705]
+[node name="AliensParent" type="Node2D" parent="Aliens" unique_id=1080386705]
 
-[node name="Alien1" parent="AlienMover/AliensParent" unique_id=475339564 instance=ExtResource("2_7oj32")]
+[node name="Alien1" parent="Aliens/AliensParent" unique_id=475339564 instance=ExtResource("2_7oj32")]
 position = Vector2(697, 368)
 
-[node name="Alien2" parent="AlienMover/AliensParent" unique_id=790257735 instance=ExtResource("2_7oj32")]
+[node name="Alien2" parent="Aliens/AliensParent" unique_id=790257735 instance=ExtResource("2_7oj32")]
 position = Vector2(636, 368)
 
-[node name="Alien3" parent="AlienMover/AliensParent" unique_id=1399569424 instance=ExtResource("2_7oj32")]
+[node name="Alien3" parent="Aliens/AliensParent" unique_id=1399569424 instance=ExtResource("2_7oj32")]
 position = Vector2(574, 368)
 
-[node name="Alien4" parent="AlienMover/AliensParent" unique_id=1171722263 instance=ExtResource("2_7oj32")]
+[node name="Alien4" parent="Aliens/AliensParent" unique_id=1171722263 instance=ExtResource("2_7oj32")]
 position = Vector2(510, 368)
 
 [node name="Barrier" parent="." unique_id=312604040 instance=ExtResource("4_qtdxr")]
 position = Vector2(563, 493.00003)
 
-[connection signal="timeout" from="AlienMover/Timer" to="AlienMover" method="_on_timer_timeout"]
+[connection signal="timeout" from="Aliens/Timer" to="Aliens" method="_on_timer_timeout"]

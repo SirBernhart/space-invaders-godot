@@ -39,7 +39,6 @@ position = Vector2(574, 368)
 position = Vector2(510, 368)
 
 [node name="Barrier" parent="." unique_id=312604040 instance=ExtResource("4_qtdxr")]
-position = Vector2(564, 477)
-max_health = 5
+position = Vector2(563, 493.00003)
 
 [connection signal="timeout" from="AlienMover/Timer" to="AlienMover" method="_on_timer_timeout"]

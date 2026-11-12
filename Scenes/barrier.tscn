@@ -2,23 +2,161 @@
 
 [ext_resource type="Script" uid="uid://dgnr4njxdvwxu" path="res://Scripts/barrier.gd" id="1_wexun"]
 [ext_resource type="Texture2D" uid="uid://bgag0bs3da867" path="res://Sprites/spritesheet.png" id="2_1olmg"]
-[ext_resource type="Shape2D" uid="uid://dwq5khhk2b7f5" path="res://Shapes/barrier_slice.tres" id="3_megwv"]
+[ext_resource type="Shader" uid="uid://dbauql7ndnakx" path="res://Shaders/barrier_degrade.gdshader" id="2_megwv"]
+[ext_resource type="Shape2D" uid="uid://btkic28byaqt6" path="res://Shapes/BarrierSlices/barrier_sides.tres" id="4_1olmg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0cgl3"]
+noise_type = 2
+frequency = 1.0
+fractal_octaves = 7
+fractal_lacunarity = 2.155
+fractal_gain = 5.5
+fractal_ping_pong_strength = 0.0
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rkote"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_0cgl3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wexun"]
+shader = ExtResource("2_megwv")
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_rkote")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_megwv"]
+size = Vector2(9, 5.6428576)
 
 [node name="Barrier" type="Node2D" unique_id=312604040]
 scale = Vector2(3.5, 3.5)
-script = ExtResource("1_wexun")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1553259139]
+[node name="BarrierPieceTopMiddle" type="Node2D" parent="." unique_id=506334416 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_wexun")
+max_health = 5
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="BarrierPieceTopMiddle" unique_id=184610809]
+material = SubResource("ShaderMaterial_wexun")
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("2_1olmg")
 region_enabled = true
 region_rect = Rect2(52, 31, 9, 6)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=711333992]
+[node name="Area2D" type="Area2D" parent="BarrierPieceTopMiddle" unique_id=1216397052]
+scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 8
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1602325190]
-shape = ExtResource("3_megwv")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceTopMiddle/Area2D" unique_id=1691701257]
+position = Vector2(0, -0.21428558)
+shape = SubResource("RectangleShape2D_megwv")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[node name="BarrierPieceBottomMiddle" type="Node2D" parent="." unique_id=1225169789 node_paths=PackedStringArray("sprite")]
+position = Vector2(0, 6)
+script = ExtResource("1_wexun")
+max_health = 5
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="BarrierPieceBottomMiddle" unique_id=476018376]
+material = SubResource("ShaderMaterial_wexun")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_1olmg")
+region_enabled = true
+region_rect = Rect2(52, 37, 9, 7)
+
+[node name="Area2D" type="Area2D" parent="BarrierPieceBottomMiddle" unique_id=124110411]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceBottomMiddle/Area2D" unique_id=4863506]
+position = Vector2(0, -0.32142878)
+shape = SubResource("RectangleShape2D_megwv")
+
+[node name="BarrierPieceTopRight" type="Node2D" parent="." unique_id=1039899165 node_paths=PackedStringArray("sprite")]
+position = Vector2(8, 0.85)
+scale = Vector2(1, 0.965)
+script = ExtResource("1_wexun")
+max_health = 5
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="BarrierPieceTopRight" unique_id=661894966]
+material = SubResource("ShaderMaterial_wexun")
+position = Vector2(0, -3.40598e-08)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_1olmg")
+region_enabled = true
+region_rect = Rect2(61, 31, 7, 8)
+
+[node name="Area2D" type="Area2D" parent="BarrierPieceTopRight" unique_id=1652962174]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceTopRight/Area2D" unique_id=1031546229]
+shape = ExtResource("4_1olmg")
+
+[node name="BarrierPieceBottomRight" type="Node2D" parent="." unique_id=1521372841 node_paths=PackedStringArray("sprite")]
+position = Vector2(8, 8.571428)
+scale = Vector2(1, 0.965)
+script = ExtResource("1_wexun")
+max_health = 5
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="BarrierPieceBottomRight" unique_id=151620528]
+material = SubResource("ShaderMaterial_wexun")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_1olmg")
+region_enabled = true
+region_rect = Rect2(61, 39, 7, 8)
+
+[node name="Area2D" type="Area2D" parent="BarrierPieceBottomRight" unique_id=196148782]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceBottomRight/Area2D" unique_id=2017476603]
+shape = ExtResource("4_1olmg")
+
+[node name="BarrierPieceTopLeft" type="Node2D" parent="." unique_id=153757407 node_paths=PackedStringArray("sprite")]
+position = Vector2(-8, 0.85)
+scale = Vector2(0.9999999, 0.9649999)
+script = ExtResource("1_wexun")
+max_health = 5
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="BarrierPieceTopLeft" unique_id=1867865977]
+material = SubResource("ShaderMaterial_wexun")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_1olmg")
+region_enabled = true
+region_rect = Rect2(46, 31, 7, 8)
+
+[node name="Area2D" type="Area2D" parent="BarrierPieceTopLeft" unique_id=1185301668]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceTopLeft/Area2D" unique_id=822247154]
+shape = ExtResource("4_1olmg")
+
+[node name="BarrierPieceBottomLeft" type="Node2D" parent="." unique_id=1490557955 node_paths=PackedStringArray("sprite")]
+position = Vector2(-8, 8.571428)
+scale = Vector2(0.99999994, 0.965)
+script = ExtResource("1_wexun")
+max_health = 5
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="BarrierPieceBottomLeft" unique_id=430975030]
+material = SubResource("ShaderMaterial_wexun")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_1olmg")
+region_enabled = true
+region_rect = Rect2(46, 39, 7, 8)
+
+[node name="Area2D" type="Area2D" parent="BarrierPieceBottomLeft" unique_id=1044962386]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceBottomLeft/Area2D" unique_id=1107571513]
+shape = ExtResource("4_1olmg")

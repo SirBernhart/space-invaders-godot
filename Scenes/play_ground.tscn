@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://darjgb3fu5rx" path="res://Scenes/player.tscn" id="1_iu3qw"]
 [ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/alien.tscn" id="2_7oj32"]
-[ext_resource type="Script" uid="uid://cdo0gnvla68xv" path="res://Scripts/alien_mover.gd" id="2_ennsb"]
+[ext_resource type="Script" uid="uid://cdo0gnvla68xv" path="res://Scripts/aliens.gd" id="2_ennsb"]
 [ext_resource type="PackedScene" uid="uid://bgd2tecc4u6ck" path="res://Scenes/barrier.tscn" id="4_qtdxr"]
 
 [node name="PlayGround" type="Node2D" unique_id=1242142124]
@@ -11,7 +11,7 @@
 position = Vector2(566, 589)
 
 [node name="Aliens" type="Node2D" parent="." unique_id=1722449847 node_paths=PackedStringArray("aliens_parent", "move_timer")]
-position = Vector2(376, 0)
+position = Vector2(-54, 0)
 script = ExtResource("2_ennsb")
 starting_alien_move_interval = 1.0
 alien_move_interval_decrement = 0.2
@@ -19,26 +19,37 @@ min_alien_move_interval = 0.2
 alien_move_distance = 50
 alien_vertical_move_distance = 25
 aliens_parent = NodePath("AliensParent")
-move_timer = NodePath("Timer")
+move_timer = NodePath("AliensMoveTimer")
 
-[node name="Timer" type="Timer" parent="Aliens" unique_id=1814113385]
+[node name="AliensMoveTimer" type="Timer" parent="Aliens" unique_id=1814113385]
 wait_time = 1.5
 
 [node name="AliensParent" type="Node2D" parent="Aliens" unique_id=1080386705]
 
 [node name="Alien1" parent="Aliens/AliensParent" unique_id=475339564 instance=ExtResource("2_7oj32")]
-position = Vector2(697, 368)
+position = Vector2(321, 234)
 
 [node name="Alien2" parent="Aliens/AliensParent" unique_id=790257735 instance=ExtResource("2_7oj32")]
-position = Vector2(636, 368)
+position = Vector2(386, 234)
 
 [node name="Alien3" parent="Aliens/AliensParent" unique_id=1399569424 instance=ExtResource("2_7oj32")]
-position = Vector2(574, 368)
+position = Vector2(451, 234)
 
 [node name="Alien4" parent="Aliens/AliensParent" unique_id=1171722263 instance=ExtResource("2_7oj32")]
-position = Vector2(510, 368)
+position = Vector2(516, 234)
 
-[node name="Barrier" parent="." unique_id=312604040 instance=ExtResource("4_qtdxr")]
-position = Vector2(563, 493.00003)
+[node name="Barriers" type="Node2D" parent="." unique_id=1644199604]
 
-[connection signal="timeout" from="Aliens/Timer" to="Aliens" method="_on_timer_timeout"]
+[node name="Barrier" parent="Barriers" unique_id=312604040 instance=ExtResource("4_qtdxr")]
+position = Vector2(470, 493.00003)
+
+[node name="Barrier2" parent="Barriers" unique_id=1156063427 instance=ExtResource("4_qtdxr")]
+position = Vector2(286, 493)
+
+[node name="Barrier3" parent="Barriers" unique_id=646942631 instance=ExtResource("4_qtdxr")]
+position = Vector2(839, 493.00003)
+
+[node name="Barrier4" parent="Barriers" unique_id=701160756 instance=ExtResource("4_qtdxr")]
+position = Vector2(655, 493)
+
+[connection signal="timeout" from="Aliens/AliensMoveTimer" to="Aliens" method="_on_aliens_move_timer_timeout"]

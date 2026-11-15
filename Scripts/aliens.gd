@@ -19,7 +19,7 @@ func _ready() -> void:
 	move_timer.start(starting_alien_move_interval)
 
 
-func _on_timer_timeout() -> void:
+func _on_aliens_move_timer_timeout() -> void:
 	for alien_instance in all_aliens:
 		# TODO:Deixar só o da direta
 		if alien_instance == null or !is_instance_valid(alien_instance):

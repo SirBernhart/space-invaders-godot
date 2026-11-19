@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://3m60s5tc8uog"]
+
+[ext_resource type="PackedScene" uid="uid://coy46w267m7lj" path="res://Scenes/bullet.tscn" id="1_u27ql"]
+
+[node name="AlienSlowBullet" unique_id=404103264 instance=ExtResource("1_u27ql")]
+y_direction = 1
+speed = 8.0
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=649786854]
+autoplay = "alien_bullet_fast"
+
+[node name="Area2D" parent="." index="1" unique_id=1431746464]
+collision_layer = 16
+collision_mask = 9

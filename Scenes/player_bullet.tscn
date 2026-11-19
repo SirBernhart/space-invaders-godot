@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dyxuka6oxtfr"]
+
+[ext_resource type="PackedScene" uid="uid://coy46w267m7lj" path="res://Scenes/bullet.tscn" id="1_bg8x2"]
+
+[node name="PlayerBullet" unique_id=404103264 instance=ExtResource("1_bg8x2")]
+y_direction = -1
+speed = 7.0

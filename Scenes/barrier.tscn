@@ -44,7 +44,7 @@ region_rect = Rect2(52, 31, 9, 6)
 [node name="Area2D" type="Area2D" parent="BarrierPieceTopMiddle" unique_id=1216397052]
 scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceTopMiddle/Area2D" unique_id=1691701257]
 position = Vector2(0, -0.21428558)
@@ -66,7 +66,7 @@ region_rect = Rect2(52, 37, 9, 7)
 [node name="Area2D" type="Area2D" parent="BarrierPieceBottomMiddle" unique_id=124110411]
 scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceBottomMiddle/Area2D" unique_id=4863506]
 position = Vector2(0, -0.32142878)
@@ -90,7 +90,7 @@ region_rect = Rect2(61, 31, 7, 8)
 [node name="Area2D" type="Area2D" parent="BarrierPieceTopRight" unique_id=1652962174]
 scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceTopRight/Area2D" unique_id=1031546229]
 shape = ExtResource("4_1olmg")
@@ -112,7 +112,7 @@ region_rect = Rect2(61, 39, 7, 8)
 [node name="Area2D" type="Area2D" parent="BarrierPieceBottomRight" unique_id=196148782]
 scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceBottomRight/Area2D" unique_id=2017476603]
 shape = ExtResource("4_1olmg")
@@ -134,7 +134,7 @@ region_rect = Rect2(46, 31, 7, 8)
 [node name="Area2D" type="Area2D" parent="BarrierPieceTopLeft" unique_id=1185301668]
 scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceTopLeft/Area2D" unique_id=822247154]
 shape = ExtResource("4_1olmg")
@@ -156,7 +156,7 @@ region_rect = Rect2(46, 39, 7, 8)
 [node name="Area2D" type="Area2D" parent="BarrierPieceBottomLeft" unique_id=1044962386]
 scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierPieceBottomLeft/Area2D" unique_id=1107571513]
 shape = ExtResource("4_1olmg")

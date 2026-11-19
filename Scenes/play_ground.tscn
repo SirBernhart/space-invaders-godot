@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://darjgb3fu5rx" path="res://Scenes/player.tscn" id="1_iu3qw"]
 [ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/alien.tscn" id="2_7oj32"]
 [ext_resource type="Script" uid="uid://cdo0gnvla68xv" path="res://Scripts/aliens.gd" id="2_ennsb"]
+[ext_resource type="PackedScene" uid="uid://f78lk3haurvx" path="res://Scenes/shooter_alien.tscn" id="4_4v5ww"]
 [ext_resource type="PackedScene" uid="uid://bgd2tecc4u6ck" path="res://Scenes/barrier.tscn" id="4_qtdxr"]
 
 [node name="PlayGround" type="Node2D" unique_id=1242142124]
@@ -11,7 +12,7 @@
 position = Vector2(566, 589)
 
 [node name="Aliens" type="Node2D" parent="." unique_id=1722449847 node_paths=PackedStringArray("aliens_parent", "move_timer")]
-position = Vector2(-54, 0)
+position = Vector2(123, 122)
 script = ExtResource("2_ennsb")
 starting_alien_move_interval = 1.0
 alien_move_interval_decrement = 0.2
@@ -24,19 +25,29 @@ move_timer = NodePath("AliensMoveTimer")
 [node name="AliensMoveTimer" type="Timer" parent="Aliens" unique_id=1814113385]
 wait_time = 1.5
 
+[node name="AliensShootTimer" type="Timer" parent="Aliens" unique_id=613372704]
+autostart = true
+
 [node name="AliensParent" type="Node2D" parent="Aliens" unique_id=1080386705]
 
 [node name="Alien1" parent="Aliens/AliensParent" unique_id=475339564 instance=ExtResource("2_7oj32")]
-position = Vector2(321, 234)
 
 [node name="Alien2" parent="Aliens/AliensParent" unique_id=790257735 instance=ExtResource("2_7oj32")]
-position = Vector2(386, 234)
+position = Vector2(50, 0)
 
 [node name="Alien3" parent="Aliens/AliensParent" unique_id=1399569424 instance=ExtResource("2_7oj32")]
-position = Vector2(451, 234)
+position = Vector2(100, 0)
 
 [node name="Alien4" parent="Aliens/AliensParent" unique_id=1171722263 instance=ExtResource("2_7oj32")]
-position = Vector2(516, 234)
+position = Vector2(150, 0)
+
+[node name="ShooterAlien" parent="Aliens/AliensParent" unique_id=1321005125 node_paths=PackedStringArray("shot_timer") instance=ExtResource("4_4v5ww")]
+position = Vector2(0, -45)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien2" parent="Aliens/AliensParent" unique_id=1473534763 node_paths=PackedStringArray("shot_timer") instance=ExtResource("4_4v5ww")]
+position = Vector2(50, -45)
+shot_timer = NodePath("../../AliensShootTimer")
 
 [node name="Barriers" type="Node2D" parent="." unique_id=1644199604]
 

@@ -1,6 +1,5 @@
-extends Node2D
-# TODO: CamelCase IsOnScreenLimitsDetector
-class_name is_on_screen_limits_detector
+class_name IsOnScreenLimitsDetector extends Node2D
+
 
 var is_on_right_limit: bool = false
 var is_on_left_limit: bool = false

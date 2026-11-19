@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c1njhrweno3a3" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bgag0bs3da867" path="res://Sprites/spritesheet.png" id="2_6t5aa"]
-[ext_resource type="PackedScene" uid="uid://coy46w267m7lj" path="res://Scenes/bullet.tscn" id="2_vgqql"]
+[ext_resource type="PackedScene" uid="uid://dyxuka6oxtfr" path="res://Scenes/player_bullet.tscn" id="2_fkybt"]
 [ext_resource type="Shape2D" uid="uid://ciimvq32hf6kn" path="res://Shapes/player_hitbox.tres" id="4_vgqql"]
 [ext_resource type="PackedScene" uid="uid://braqoh2wtc535" path="res://Scenes/screen_limits_detector.tscn" id="5_fkybt"]
 
 [node name="Player" type="Node2D" unique_id=411125828 node_paths=PackedStringArray("screen_limit_detector")]
 scale = Vector2(3, 3)
 script = ExtResource("1_cvnsp")
-bullet_scene = ExtResource("2_vgqql")
+bullet_scene = ExtResource("2_fkybt")
 screen_limit_detector = NodePath("ScreenLimitsDetector")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=364351892]

@@ -1,8 +1,5 @@
 extends Node2D
 
-# TODO: Chamar de Aliens e colocar sempre timer com um nome
-# próprio para facilitar a legibilidade
-
 @export var starting_alien_move_interval : float
 @export var alien_move_interval_decrement : float
 @export var min_alien_move_interval : float

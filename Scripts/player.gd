@@ -28,3 +28,7 @@ func _process(delta: float) -> void:
 
 func toggle_can_fire():
 	can_fire = !can_fire
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	queue_free()

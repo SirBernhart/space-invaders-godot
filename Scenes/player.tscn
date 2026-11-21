@@ -18,8 +18,11 @@ region_enabled = true
 region_rect = Rect2(2, 48, 15, 10)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=167393843]
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1342705115]
 shape = ExtResource("4_vgqql")
 
 [node name="ScreenLimitsDetector" parent="." unique_id=1321786082 instance=ExtResource("5_fkybt")]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

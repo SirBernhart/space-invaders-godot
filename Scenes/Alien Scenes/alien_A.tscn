@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dwbio3j1on1si"]
+
+[ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/Alien Scenes/alien_base.tscn" id="1_l745n"]
+
+[node name="AlienA" unique_id=790257735 instance=ExtResource("1_l745n")]

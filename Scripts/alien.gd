@@ -1,6 +1,7 @@
 class_name Alien extends Node2D
 
 @export var screen_limits_detector: IsOnScreenLimitsDetector
+@export var score_reward : int
 
 func can_move_in_direction(move_direction: Vector2):
 	return !screen_limits_detector.is_on_right_limit if move_direction.x > 0 else !screen_limits_detector.is_on_left_limit

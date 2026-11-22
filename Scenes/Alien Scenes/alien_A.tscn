@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/Alien Scenes/alien_base.tscn" id="1_l745n"]
 
 [node name="AlienA" unique_id=790257735 instance=ExtResource("1_l745n")]
+score_reward = 10

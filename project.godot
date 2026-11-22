@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 Score="*uid://cj3uqpq24tmb1"
+PlayerLives="*uid://bk1w8b4st8hbo"
 
 [display]
 

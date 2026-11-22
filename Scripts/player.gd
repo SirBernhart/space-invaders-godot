@@ -31,4 +31,5 @@ func toggle_can_fire():
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("Scenes/play_ground.tscn")
 	queue_free()

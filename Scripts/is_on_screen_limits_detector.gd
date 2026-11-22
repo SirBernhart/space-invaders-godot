@@ -1,4 +1,4 @@
-class_name IsOnScreenLimitsDetector extends Node2D
+extends Node2D
 
 
 var is_on_right_limit: bool = false

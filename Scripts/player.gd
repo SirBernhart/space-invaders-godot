@@ -2,7 +2,7 @@ extends Node2D
 
 @export var move_speed: float = 5
 @export var bullet_scene: PackedScene
-@export var screen_limit_detector: IsOnScreenLimitsDetector
+@export var screen_limit_detector: Node2D
 
 var can_fire: bool = true
 

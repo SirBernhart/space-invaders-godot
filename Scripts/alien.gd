@@ -1,6 +1,6 @@
 class_name Alien extends Node2D
 
-@export var screen_limits_detector: IsOnScreenLimitsDetector
+@export var screen_limits_detector: Node2D
 @export var score_reward : int
 
 signal on_death(rewarded_score:int)

@@ -4,7 +4,7 @@
 
 [node name="AlienSlowBullet" unique_id=404103264 instance=ExtResource("1_k7ouw")]
 y_direction = 1
-speed = 5.0
+speed = 4.5
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=649786854]
 autoplay = "alien_bullet_slow"

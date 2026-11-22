@@ -6,14 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://d135s61k8kbo0" path="res://Scenes/Alien Scenes/alien_B.tscn" id="4_4v5ww"]
 [ext_resource type="PackedScene" uid="uid://bgd2tecc4u6ck" path="res://Scenes/barrier.tscn" id="4_qtdxr"]
 [ext_resource type="PackedScene" uid="uid://f78lk3haurvx" path="res://Scenes/Alien Scenes/shooter_alien.tscn" id="5_llyt2"]
-[ext_resource type="Script" uid="uid://cj3uqpq24tmb1" path="res://Scripts/score.gd" id="7_73qbp"]
 
 [node name="PlayGround" type="Node2D" unique_id=1242142124]
 
 [node name="Player" parent="." unique_id=411125828 instance=ExtResource("1_iu3qw")]
 position = Vector2(566, 589)
 
-[node name="Aliens" type="Node2D" parent="." unique_id=1722449847 node_paths=PackedStringArray("aliens_parent", "move_timer", "score")]
+[node name="Aliens" type="Node2D" parent="." unique_id=1722449847 node_paths=PackedStringArray("aliens_parent", "move_timer")]
 position = Vector2(123, 122)
 script = ExtResource("2_ennsb")
 starting_alien_move_interval = 1.0
@@ -23,7 +22,6 @@ alien_move_distance = 50
 alien_vertical_move_distance = 25
 aliens_parent = NodePath("AliensParent")
 move_timer = NodePath("AliensMoveTimer")
-score = NodePath("../Score")
 
 [node name="AliensMoveTimer" type="Timer" parent="Aliens" unique_id=1814113385]
 wait_time = 1.5
@@ -206,8 +204,5 @@ position = Vector2(839, 493.00003)
 
 [node name="Barrier4" parent="Barriers" unique_id=701160756 instance=ExtResource("4_qtdxr")]
 position = Vector2(655, 493)
-
-[node name="Score" type="Node2D" parent="." unique_id=771552652]
-script = ExtResource("7_73qbp")
 
 [connection signal="timeout" from="Aliens/AliensMoveTimer" to="Aliens" method="_on_aliens_move_timer_timeout"]

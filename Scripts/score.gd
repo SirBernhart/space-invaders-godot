@@ -1,4 +1,4 @@
-class_name Score extends Node2D
+extends Node2D
 
 
 var current_score : int = 0

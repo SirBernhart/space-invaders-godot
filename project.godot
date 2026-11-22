@@ -14,6 +14,10 @@ config/name="Space Invaders"
 run/main_scene="res://Scenes/play_ground.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+Score="*uid://cj3uqpq24tmb1"
+
 [display]
 
 window/stretch/mode="canvas_items"

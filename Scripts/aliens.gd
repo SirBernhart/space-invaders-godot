@@ -7,7 +7,6 @@ extends Node2D
 @export var alien_vertical_move_distance : int
 @export var aliens_parent : Node2D
 @export var move_timer : Timer
-@export var score : Score
 
 var current_move_direction : Vector2 = Vector2.RIGHT
 var all_aliens: Array[Node]
@@ -17,7 +16,7 @@ func _ready() -> void:
 	all_aliens = aliens_parent.get_children()
 	move_timer.start(starting_alien_move_interval)
 	for alien in all_aliens:
-		alien.on_death.connect(score.increase_score)
+		alien.on_death.connect(Score.increase_score)
 
 func _on_aliens_move_timer_timeout() -> void:
 	for alien_instance in all_aliens:

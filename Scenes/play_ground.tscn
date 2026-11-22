@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://07if7ldg1fuh"]
 
 [ext_resource type="PackedScene" uid="uid://darjgb3fu5rx" path="res://Scenes/player.tscn" id="1_iu3qw"]
-[ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/alien.tscn" id="2_7oj32"]
 [ext_resource type="Script" uid="uid://cdo0gnvla68xv" path="res://Scripts/aliens.gd" id="2_ennsb"]
-[ext_resource type="PackedScene" uid="uid://f78lk3haurvx" path="res://Scenes/shooter_alien.tscn" id="4_4v5ww"]
+[ext_resource type="PackedScene" uid="uid://dwbio3j1on1si" path="res://Scenes/Alien Scenes/alien_A.tscn" id="3_4v5ww"]
+[ext_resource type="PackedScene" uid="uid://d135s61k8kbo0" path="res://Scenes/Alien Scenes/alien_B.tscn" id="4_4v5ww"]
 [ext_resource type="PackedScene" uid="uid://bgd2tecc4u6ck" path="res://Scenes/barrier.tscn" id="4_qtdxr"]
+[ext_resource type="PackedScene" uid="uid://f78lk3haurvx" path="res://Scenes/Alien Scenes/shooter_alien.tscn" id="5_llyt2"]
 
 [node name="PlayGround" type="Node2D" unique_id=1242142124]
 
@@ -29,24 +30,165 @@ wait_time = 1.5
 autostart = true
 
 [node name="AliensParent" type="Node2D" parent="Aliens" unique_id=1080386705]
+position = Vector2(0, 126)
 
-[node name="Alien1" parent="Aliens/AliensParent" unique_id=475339564 instance=ExtResource("2_7oj32")]
+[node name="AlienA1" parent="Aliens/AliensParent" unique_id=790257735 instance=ExtResource("3_4v5ww")]
 
-[node name="Alien2" parent="Aliens/AliensParent" unique_id=790257735 instance=ExtResource("2_7oj32")]
+[node name="AlienA2" parent="Aliens/AliensParent" unique_id=1434570559 instance=ExtResource("3_4v5ww")]
 position = Vector2(50, 0)
 
-[node name="Alien3" parent="Aliens/AliensParent" unique_id=1399569424 instance=ExtResource("2_7oj32")]
+[node name="AlienA3" parent="Aliens/AliensParent" unique_id=412131898 instance=ExtResource("3_4v5ww")]
 position = Vector2(100, 0)
 
-[node name="Alien4" parent="Aliens/AliensParent" unique_id=1171722263 instance=ExtResource("2_7oj32")]
+[node name="AlienA4" parent="Aliens/AliensParent" unique_id=1170730128 instance=ExtResource("3_4v5ww")]
 position = Vector2(150, 0)
 
-[node name="ShooterAlien" parent="Aliens/AliensParent" unique_id=1321005125 node_paths=PackedStringArray("shot_timer") instance=ExtResource("4_4v5ww")]
-position = Vector2(0, -45)
+[node name="AlienA5" parent="Aliens/AliensParent" unique_id=1617284043 instance=ExtResource("3_4v5ww")]
+position = Vector2(200, 0)
+
+[node name="AlienA6" parent="Aliens/AliensParent" unique_id=2066374460 instance=ExtResource("3_4v5ww")]
+position = Vector2(250, 0)
+
+[node name="AlienA7" parent="Aliens/AliensParent" unique_id=727908422 instance=ExtResource("3_4v5ww")]
+position = Vector2(300, 0)
+
+[node name="AlienA8" parent="Aliens/AliensParent" unique_id=265891708 instance=ExtResource("3_4v5ww")]
+position = Vector2(350, 0)
+
+[node name="AlienA9" parent="Aliens/AliensParent" unique_id=657245455 instance=ExtResource("3_4v5ww")]
+position = Vector2(400, 0)
+
+[node name="AlienA10" parent="Aliens/AliensParent" unique_id=615320047 instance=ExtResource("3_4v5ww")]
+position = Vector2(450, 0)
+
+[node name="AlienA11" parent="Aliens/AliensParent" unique_id=492175143 instance=ExtResource("3_4v5ww")]
+position = Vector2(0, -50)
+
+[node name="AlienA12" parent="Aliens/AliensParent" unique_id=371320026 instance=ExtResource("3_4v5ww")]
+position = Vector2(50, -50)
+
+[node name="AlienA13" parent="Aliens/AliensParent" unique_id=1089487447 instance=ExtResource("3_4v5ww")]
+position = Vector2(100, -50)
+
+[node name="AlienA14" parent="Aliens/AliensParent" unique_id=713935865 instance=ExtResource("3_4v5ww")]
+position = Vector2(150, -50)
+
+[node name="AlienA15" parent="Aliens/AliensParent" unique_id=142245848 instance=ExtResource("3_4v5ww")]
+position = Vector2(200, -50)
+
+[node name="AlienA16" parent="Aliens/AliensParent" unique_id=1988904447 instance=ExtResource("3_4v5ww")]
+position = Vector2(250, -50)
+
+[node name="AlienA17" parent="Aliens/AliensParent" unique_id=161303267 instance=ExtResource("3_4v5ww")]
+position = Vector2(300, -50)
+
+[node name="AlienA18" parent="Aliens/AliensParent" unique_id=1018070996 instance=ExtResource("3_4v5ww")]
+position = Vector2(350, -50)
+
+[node name="AlienA19" parent="Aliens/AliensParent" unique_id=1835778881 instance=ExtResource("3_4v5ww")]
+position = Vector2(400, -50)
+
+[node name="AlienA20" parent="Aliens/AliensParent" unique_id=1469274824 instance=ExtResource("3_4v5ww")]
+position = Vector2(450, -50)
+
+[node name="AlienB1" parent="Aliens/AliensParent" unique_id=403204913 instance=ExtResource("4_4v5ww")]
+position = Vector2(0, -100)
+
+[node name="AlienB2" parent="Aliens/AliensParent" unique_id=1310799676 instance=ExtResource("4_4v5ww")]
+position = Vector2(50, -100)
+
+[node name="AlienB3" parent="Aliens/AliensParent" unique_id=1122567390 instance=ExtResource("4_4v5ww")]
+position = Vector2(100, -100)
+
+[node name="AlienB4" parent="Aliens/AliensParent" unique_id=963718976 instance=ExtResource("4_4v5ww")]
+position = Vector2(150, -100)
+
+[node name="AlienB5" parent="Aliens/AliensParent" unique_id=1286056361 instance=ExtResource("4_4v5ww")]
+position = Vector2(200, -100)
+
+[node name="AlienB6" parent="Aliens/AliensParent" unique_id=1812474960 instance=ExtResource("4_4v5ww")]
+position = Vector2(250, -100)
+
+[node name="AlienB7" parent="Aliens/AliensParent" unique_id=50632878 instance=ExtResource("4_4v5ww")]
+position = Vector2(300, -100)
+
+[node name="AlienB8" parent="Aliens/AliensParent" unique_id=365009032 instance=ExtResource("4_4v5ww")]
+position = Vector2(350, -100)
+
+[node name="AlienB9" parent="Aliens/AliensParent" unique_id=2021530367 instance=ExtResource("4_4v5ww")]
+position = Vector2(400, -100)
+
+[node name="AlienB10" parent="Aliens/AliensParent" unique_id=514356789 instance=ExtResource("4_4v5ww")]
+position = Vector2(450, -100.00001)
+
+[node name="AlienB11" parent="Aliens/AliensParent" unique_id=1551688229 instance=ExtResource("4_4v5ww")]
+position = Vector2(0, -150)
+
+[node name="AlienB12" parent="Aliens/AliensParent" unique_id=419571988 instance=ExtResource("4_4v5ww")]
+position = Vector2(50, -150)
+
+[node name="AlienB13" parent="Aliens/AliensParent" unique_id=1841832070 instance=ExtResource("4_4v5ww")]
+position = Vector2(100, -150)
+
+[node name="AlienB14" parent="Aliens/AliensParent" unique_id=378792747 instance=ExtResource("4_4v5ww")]
+position = Vector2(150, -150)
+
+[node name="AlienB15" parent="Aliens/AliensParent" unique_id=994014391 instance=ExtResource("4_4v5ww")]
+position = Vector2(200, -150)
+
+[node name="AlienB16" parent="Aliens/AliensParent" unique_id=789295845 instance=ExtResource("4_4v5ww")]
+position = Vector2(250, -150)
+
+[node name="AlienB17" parent="Aliens/AliensParent" unique_id=1678648540 instance=ExtResource("4_4v5ww")]
+position = Vector2(300, -150)
+
+[node name="AlienB18" parent="Aliens/AliensParent" unique_id=1344404695 instance=ExtResource("4_4v5ww")]
+position = Vector2(350, -150)
+
+[node name="AlienB19" parent="Aliens/AliensParent" unique_id=882458518 instance=ExtResource("4_4v5ww")]
+position = Vector2(400, -150)
+
+[node name="AlienB20" parent="Aliens/AliensParent" unique_id=151295476 instance=ExtResource("4_4v5ww")]
+position = Vector2(450, -150)
+
+[node name="ShooterAlien1" parent="Aliens/AliensParent" unique_id=365093678 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(0, -200)
 shot_timer = NodePath("../../AliensShootTimer")
 
-[node name="ShooterAlien2" parent="Aliens/AliensParent" unique_id=1473534763 node_paths=PackedStringArray("shot_timer") instance=ExtResource("4_4v5ww")]
-position = Vector2(50, -45)
+[node name="ShooterAlien2" parent="Aliens/AliensParent" unique_id=153330644 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(50, -200)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien3" parent="Aliens/AliensParent" unique_id=2070383789 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(100, -200)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien4" parent="Aliens/AliensParent" unique_id=1196487635 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(150, -200)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien5" parent="Aliens/AliensParent" unique_id=1377138018 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(200, -200)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien6" parent="Aliens/AliensParent" unique_id=2096978591 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(250, -200)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien7" parent="Aliens/AliensParent" unique_id=1067209258 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(300, -200)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien8" parent="Aliens/AliensParent" unique_id=1063351589 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(350, -200)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien9" parent="Aliens/AliensParent" unique_id=861233462 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(400, -200)
+shot_timer = NodePath("../../AliensShootTimer")
+
+[node name="ShooterAlien10" parent="Aliens/AliensParent" unique_id=788595239 node_paths=PackedStringArray("shot_timer") instance=ExtResource("5_llyt2")]
+position = Vector2(450, -200)
 shot_timer = NodePath("../../AliensShootTimer")
 
 [node name="Barriers" type="Node2D" parent="." unique_id=1644199604]

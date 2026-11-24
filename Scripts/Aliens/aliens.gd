@@ -11,12 +11,14 @@ extends Node2D
 var current_move_direction : Vector2 = Vector2.RIGHT
 var all_aliens: Array[Node]
 
+signal all_aliens_died()
+
 
 func _ready() -> void:
 	all_aliens = aliens_parent.get_children()
 	move_timer.start(starting_alien_move_interval)
 	for alien in all_aliens:
-		alien.on_death.connect(Score.increase_score)
+		alien.on_death.connect(_on_alien_died)
 
 func _on_aliens_move_timer_timeout() -> void:
 	for alien_instance in all_aliens:
@@ -31,3 +33,12 @@ func _on_aliens_move_timer_timeout() -> void:
 			return
 	
 	position += current_move_direction * alien_move_distance
+	
+func _on_alien_died(score_reward: int, alien_instance:Node2D) -> void:
+	Score.increase_score(score_reward)
+	var alien_index = all_aliens.find(alien_instance)
+	all_aliens.remove_at(alien_index)
+	if all_aliens.is_empty():
+		all_aliens_died.emit()
+		
+	

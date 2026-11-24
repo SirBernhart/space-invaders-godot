@@ -3,11 +3,11 @@ class_name Alien extends Node2D
 @export var screen_limits_detector: Node2D
 @export var score_reward : int
 
-signal on_death(rewarded_score:int)
+signal on_death(rewarded_score:int, alien_instance:Node2D)
 
 func can_move_in_direction(move_direction: Vector2):
 	return !screen_limits_detector.is_on_right_limit if move_direction.x > 0 else !screen_limits_detector.is_on_left_limit
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	on_death.emit(score_reward)
+	on_death.emit(score_reward, self)
 	queue_free()

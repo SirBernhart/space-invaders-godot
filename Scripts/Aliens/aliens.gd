@@ -29,10 +29,10 @@ func _on_aliens_move_timer_timeout() -> void:
 			current_move_direction *= -1
 			
 			move_timer.start(max(move_timer.wait_time - alien_move_interval_decrement, min_alien_move_interval))
-			position.y += alien_vertical_move_distance
+			aliens_parent.position.y += alien_vertical_move_distance
 			return
 	
-	position += current_move_direction * alien_move_distance
+	aliens_parent.position += current_move_direction * alien_move_distance
 	
 func _on_alien_died(score_reward: int, alien_instance:Node2D) -> void:
 	Score.increase_score(score_reward)

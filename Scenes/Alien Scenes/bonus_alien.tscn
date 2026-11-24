@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dlqtu2ap21llo"]
+
+[ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/Alien Scenes/alien_base.tscn" id="1_8ad0k"]
+[ext_resource type="Script" uid="uid://bq8j5foudkrxt" path="res://Scripts/Aliens/bonus_alien.gd" id="2_pick4"]
+[ext_resource type="Shape2D" uid="uid://detkmlov0vr8u" path="res://Shapes/bonus_alien_hitbox.tres" id="3_pick4"]
+
+[node name="AlienBonus" unique_id=790257735 instance=ExtResource("1_8ad0k")]
+script = ExtResource("2_pick4")
+speed = 5.0
+score_reward = 100
+
+[node name="Sprite2D" parent="." index="0" unique_id=526128683]
+modulate = Color(1, 0, 0, 1)
+region_rect = Rect2(1, 40, 16, 7)
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(2050905484) index="0" unique_id=1032924435]
+shape = ExtResource("3_pick4")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="3" unique_id=204685540]
+rect = Rect2(-8.666667, -3.6666667, 17.333334, 7.3333335)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

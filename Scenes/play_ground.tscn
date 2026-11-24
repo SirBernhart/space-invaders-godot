@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://d135s61k8kbo0" path="res://Scenes/Alien Scenes/alien_B.tscn" id="4_4v5ww"]
 [ext_resource type="PackedScene" uid="uid://bgd2tecc4u6ck" path="res://Scenes/barrier.tscn" id="4_qtdxr"]
 [ext_resource type="PackedScene" uid="uid://f78lk3haurvx" path="res://Scenes/Alien Scenes/shooter_alien.tscn" id="5_llyt2"]
+[ext_resource type="Script" uid="uid://c27pqqev3rmnc" path="res://Scripts/Aliens/bonus_alien_instantiator.gd" id="6_tphts"]
 [ext_resource type="Script" uid="uid://cwbuc7h608f1e" path="res://Scripts/game_loop_manager.gd" id="7_73qbp"]
+[ext_resource type="PackedScene" uid="uid://dlqtu2ap21llo" path="res://Scenes/Alien Scenes/bonus_alien.tscn" id="7_fkcjc"]
 
 [node name="PlayGround" type="Node2D" unique_id=1242142124]
 
@@ -31,7 +33,7 @@ wait_time = 1.5
 autostart = true
 
 [node name="AliensParent" type="Node2D" parent="Aliens" unique_id=1080386705]
-position = Vector2(0, 126)
+position = Vector2(0, 160)
 
 [node name="AlienA1" parent="Aliens/AliensParent" unique_id=790257735 instance=ExtResource("3_4v5ww")]
 
@@ -192,6 +194,16 @@ shot_timer = NodePath("../../AliensShootTimer")
 position = Vector2(450, -200)
 shot_timer = NodePath("../../AliensShootTimer")
 
+[node name="BonusAlienInstantiator" type="Node2D" parent="Aliens" unique_id=1258388598 node_paths=PackedStringArray("instantiation_timer")]
+position = Vector2(-121, -103)
+script = ExtResource("6_tphts")
+min_bonus_alien_interval = 10.0
+max_bonus_alien_interval = 11.0
+bonus_alien_scene = ExtResource("7_fkcjc")
+instantiation_timer = NodePath("BonusAlienInstantiaionTimer")
+
+[node name="BonusAlienInstantiaionTimer" type="Timer" parent="Aliens/BonusAlienInstantiator" unique_id=1432558491]
+
 [node name="Barriers" type="Node2D" parent="." unique_id=1644199604]
 
 [node name="Barrier" parent="Barriers" unique_id=312604040 instance=ExtResource("4_qtdxr")]
@@ -211,3 +223,4 @@ script = ExtResource("7_73qbp")
 aliens = NodePath("../Aliens")
 
 [connection signal="timeout" from="Aliens/AliensMoveTimer" to="Aliens" method="_on_aliens_move_timer_timeout"]
+[connection signal="timeout" from="Aliens/BonusAlienInstantiator/BonusAlienInstantiaionTimer" to="Aliens/BonusAlienInstantiator" method="_on_bonus_alien_instantiaion_timer_timeout"]

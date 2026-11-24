@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 			position.x -= move_speed * delta 
 	
 	# Shooting
-	if Input.is_action_just_pressed("fire") and can_fire:
+	if Input.is_action_pressed("fire") and can_fire:
 		var new_bullet: Node2D = bullet_scene.instantiate()
 		get_parent().add_child(new_bullet)
 		new_bullet.position = position
@@ -32,5 +32,4 @@ func toggle_can_fire():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	PlayerLives.decrement_lives()
-	get_tree().change_scene_to_file("Scenes/play_ground.tscn")
 	queue_free()

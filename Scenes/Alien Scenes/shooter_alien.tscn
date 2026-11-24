@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://f78lk3haurvx"]
 
 [ext_resource type="PackedScene" uid="uid://c711wswn6xq1j" path="res://Scenes/Alien Scenes/alien_base.tscn" id="1_3vqe8"]
-[ext_resource type="Script" uid="uid://7b4a8r5u2sdn" path="res://Scripts/shooter_alien.gd" id="2_g43re"]
+[ext_resource type="Script" uid="uid://7b4a8r5u2sdn" path="res://Scripts/Aliens/shooter_alien.gd" id="2_g43re"]
 [ext_resource type="PackedScene" uid="uid://b8w171wkqklgl" path="res://Scenes/alien_slow_bullet.tscn" id="3_dux5d"]
 [ext_resource type="PackedScene" uid="uid://3m60s5tc8uog" path="res://Scenes/alien_fast_bullet.tscn" id="4_8t0ru"]
 
